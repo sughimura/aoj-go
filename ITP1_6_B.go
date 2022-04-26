@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func printResult(mark string, data []bool) {
+func printResult(mark string, data [13]bool) {
 	for i, b := range data {
 		if b == false {
 			fmt.Printf("%s %d\n", mark, i+1)
@@ -13,10 +13,7 @@ func printResult(mark string, data []bool) {
 func main() {
 	var n int
 	fmt.Scan(&n)
-	S := make([]bool, 13)
-	H := make([]bool, 13)
-	C := make([]bool, 13)
-	D := make([]bool, 13)
+	var S, H, C, D [13]bool
 	for i := 0; i < n; i++ {
 		var mark string
 		var number int
