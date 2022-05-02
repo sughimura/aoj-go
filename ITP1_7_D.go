@@ -2,21 +2,20 @@ package main
 
 import "fmt"
 
+func make2dSlice(a int, b int) [][]int {
+	matrix := make([][]int, a)
+	for i := 0; i < a; i++ {
+		matrix[i] = make([]int, b)
+	}
+	return matrix
+}
+
 func main() {
 	var n, m, l int
 	fmt.Scanln(&n, &m, &l)
-	A := make([][]int, n)
-	for i := 0; i < n; i++ {
-		A[i] = make([]int, m)
-	}
-	B := make([][]int, m)
-	for i := 0; i < m; i++ {
-		B[i] = make([]int, l)
-	}
-	C := make([][]int, n)
-	for i := 0; i < n; i++ {
-		C[i] = make([]int, l)
-	}
+	A := make2dSlice(n, m)
+	B := make2dSlice(m, l)
+	C := make2dSlice(n, l)
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < m; j++ {
