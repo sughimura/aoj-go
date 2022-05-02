@@ -5,20 +5,17 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"unicode"
 )
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		line := scanner.Text()
-		upperA := 'A'
-		upperZ := 'Z'
-		lowerA := 'a'
-		lowerZ := 'z'
 		for _, c := range line {
-			if upperA <= c && c <= upperZ {
+			if unicode.IsUpper(c) {
 				fmt.Print(strings.ToLower(string(c)))
-			} else if lowerA <= c && c <= lowerZ {
+			} else if unicode.IsLower(c) {
 				fmt.Print(strings.ToUpper(string(c)))
 			} else {
 				fmt.Print(string(c))
