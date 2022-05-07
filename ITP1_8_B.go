@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -13,10 +12,9 @@ func main() {
 		if x == "0" {
 			break
 		}
-		xList := strings.Split(x, "")
 		sum := 0
-		for _, s := range xList {
-			si, _ := strconv.Atoi(s)
+		for _, c := range x {
+			si, _ := strconv.Atoi(string(c))
 			sum += si
 		}
 		fmt.Println(sum)
