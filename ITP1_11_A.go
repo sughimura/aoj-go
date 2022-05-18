@@ -3,43 +3,43 @@ package main
 import "fmt"
 
 type Dice struct {
-	label1, label2, label3, label4, label5, label6 int
+	way1, way2, way3, way4, way5, way6 int
 }
 
 func (d *Dice) rollToW() {
-	tmp := d.label1
-	d.label1 = d.label3
-	d.label3 = d.label6
-	d.label6 = d.label4
-	d.label4 = tmp
+	tmp := d.way1
+	d.way1 = d.way3
+	d.way3 = d.way6
+	d.way6 = d.way4
+	d.way4 = tmp
 }
 
 func (d *Dice) rollToE() {
-	tmp := d.label1
-	d.label1 = d.label4
-	d.label4 = d.label6
-	d.label6 = d.label3
-	d.label3 = tmp
+	tmp := d.way1
+	d.way1 = d.way4
+	d.way4 = d.way6
+	d.way6 = d.way3
+	d.way3 = tmp
 }
 
 func (d *Dice) rollToS() {
-	tmp := d.label1
-	d.label1 = d.label5
-	d.label5 = d.label6
-	d.label6 = d.label2
-	d.label2 = tmp
+	tmp := d.way1
+	d.way1 = d.way5
+	d.way5 = d.way6
+	d.way6 = d.way2
+	d.way2 = tmp
 }
 
 func (d *Dice) rollToN() {
-	tmp := d.label1
-	d.label1 = d.label2
-	d.label2 = d.label6
-	d.label6 = d.label5
-	d.label5 = tmp
+	tmp := d.way1
+	d.way1 = d.way2
+	d.way2 = d.way6
+	d.way6 = d.way5
+	d.way5 = tmp
 }
 
 func (d *Dice) top() int {
-	return d.label1
+	return d.way1
 }
 
 func main() {
