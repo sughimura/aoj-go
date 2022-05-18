@@ -7,35 +7,19 @@ type Dice struct {
 }
 
 func (d *Dice) rollToW() {
-	tmp := d.way1
-	d.way1 = d.way3
-	d.way3 = d.way6
-	d.way6 = d.way4
-	d.way4 = tmp
+	d.way1, d.way3, d.way6, d.way4 = d.way3, d.way6, d.way4, d.way1
 }
 
 func (d *Dice) rollToE() {
-	tmp := d.way1
-	d.way1 = d.way4
-	d.way4 = d.way6
-	d.way6 = d.way3
-	d.way3 = tmp
+	d.way1, d.way4, d.way6, d.way3 = d.way4, d.way6, d.way3, d.way1
 }
 
 func (d *Dice) rollToS() {
-	tmp := d.way1
-	d.way1 = d.way5
-	d.way5 = d.way6
-	d.way6 = d.way2
-	d.way2 = tmp
+	d.way1, d.way5, d.way6, d.way2 = d.way5, d.way6, d.way2, d.way1
 }
 
 func (d *Dice) rollToN() {
-	tmp := d.way1
-	d.way1 = d.way2
-	d.way2 = d.way6
-	d.way6 = d.way5
-	d.way5 = tmp
+	d.way1, d.way2, d.way6, d.way5 = d.way2, d.way6, d.way5, d.way1
 }
 
 func (d *Dice) top() int {
